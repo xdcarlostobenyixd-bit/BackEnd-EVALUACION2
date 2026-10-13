@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.http import HttpResponse
 from .models import Contacto
 
-# Branding del Admin para Caso 3
+
 admin.site.site_header = "Administración de Agenda de Contactos"
 admin.site.site_title = "Agenda Admin"
 admin.site.index_title = "Gestión de Contactos Personales"
@@ -21,6 +21,6 @@ def exportar_a_csv(modeladmin, request, queryset):
 @admin.register(Contacto)
 class ContactoAdmin(admin.ModelAdmin):
     list_display = ('nombre', 'apellido', 'email', 'telefono', 'fecha_creacion')
-    search_fields = ('nombre', 'apellido', 'email')  # Exigido en pauta Caso 3
+    search_fields = ('nombre', 'apellido', 'email')  
     list_filter = ('fecha_creacion',)
-    actions = [exportar_a_csv]  # Acción personalizada
+    actions = [exportar_a_csv]  

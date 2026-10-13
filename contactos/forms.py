@@ -56,14 +56,14 @@ class ContactoForm(forms.ModelForm):
 
         return email
 
-    # Validar Teléfono (Formato chileno: 9 dígitos o +569...)
+    # Validar Teléfono 
     def clean_telefono(self):
         telefono = self.cleaned_data.get('telefono')
         if telefono:
             # Eliminar espacios en blanco
             telefono = telefono.strip().replace(" ", "")
 
-            # Expresión regular para validar formato (+569XXXXXXXX o 9XXXXXXXX o 8 dígitos fijos)
+            
             patron_telefono = r'^(\+?56)?(\d{9})$'
             
             if not re.match(patron_telefono, telefono):

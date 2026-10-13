@@ -11,7 +11,7 @@ def lista_contactos(request):
     else:
         contactos_list = Contacto.objects.all()
 
-    paginator = Paginator(contactos_list, 5) # 5 contactos por página
+    paginator = Paginator(contactos_list, 5)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
 
