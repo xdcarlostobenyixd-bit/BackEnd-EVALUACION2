@@ -3,3 +3,9 @@ psycopg2-binary
 python-dotenv
 whitenoise
 gunicorn
+
+djangorestframework
+markdown
+django-filter
+
+djangorestframework-simplejwt
